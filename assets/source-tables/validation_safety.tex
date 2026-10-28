@@ -1,0 +1,320 @@
+% \begin{table*}[t!]
+% \centering
+% \setlength{\tabcolsep}{4.6pt}
+% \renewcommand{\arraystretch}{1.08}
+% \resizebox{\textwidth}{!}{
+% \begin{tabular}{p{3.35cm}|c c | c c | c | c c c | c}
+% \toprule
+% \textbf{Benchmark}
+% & \textbf{Embodiment}
+% & \textbf{Setting}
+% & \multicolumn{2}{c|}{\textbf{Evaluated Output}}
+% & \textbf{Closed-}
+% & \multicolumn{3}{c|}{\textbf{Safety Dimensions}}
+% & \textbf{Long-} \\
+% &
+% &
+% &
+% \textbf{Text-based}
+% & \textbf{Ctrl-based}
+% & \textbf{loop}
+% & \textbf{Human}
+% & \textbf{Env}
+% & \textbf{Social}
+% & \textbf{tailed} \\
+% \midrule
+
+% \multicolumn{10}{l}{\textit{Reasoning-focused evaluation}}\\
+% \midrule
+
+% \makecell[l]{WaymoQA~\footnotesize\cite{yu2025waymoqa}}
+% & Driving & Real
+% & \cmark & \xmark & \xmark
+% & \cmark & \cmark & \cmark & \cmark \\
+
+% \makecell[l]{WOMD-Reasoning~\footnotesize\cite{li2025womdreasoning}}
+% & Driving & Real
+% & \cmark & \cmark & \xmark
+% & \cmark & \cmark & \cmark & \cmark \\
+
+% \makecell[l]{ASIMOV-1~\footnotesize\cite{sermanet2025asimov1}}
+% & Agentic & Real
+% & \cmark & \xmark & \xmark
+% & \cmark & \cmark & \cmark & \xmark \\
+
+% \makecell[l]{ASIMOV-2.0~\footnotesize\cite{jindal2025}}
+% & Agentic & Real
+% & \cmark & \xmark & \xmark
+% & \cmark & \cmark & \cmark & \xmark \\
+
+% \makecell[l]{ASIMOV-Agentic~\footnotesize\cite{gemini2026asimovagentic}}
+% & Agentic & Real
+% & \cmark & \xmark & \xmark
+% & \cmark & \cmark & \cmark & \cmark \\
+
+% \makecell[l]{SciFi-Benchmark~\footnotesize\cite{sermanet2025scifi}}
+% & Agentic & Real
+% & \cmark & \xmark & \xmark
+% & \xmark & \xmark & \cmark & \xmark \\
+
+% \makecell[l]{IS-Bench~\footnotesize\cite{isbench2025}}
+% & Agentic & Sim
+% & \cmark & \xmark & \cmark
+% & \xmark & \cmark & \xmark & \xmark \\
+
+% \makecell[l]{AGENTSAFE~\footnotesize\cite{ying2025agentsafebenchmarkingsafetyembodied}}
+% & Agentic & Sim
+% & \cmark & \xmark & \cmark
+% & \xmark & \cmark & \xmark & \xmark \\
+
+% \makecell[l]{SafePlan-Bench~\footnotesize\cite{SafePlan-Bench2025}}
+% & Agentic & Sim
+% & \cmark & \xmark & \cmark
+% & \cmark & \cmark & \xmark & \xmark \\
+
+% \midrule
+% \multicolumn{10}{l}{\textit{Control or joint reasoning-control evaluation}}\\
+% \midrule
+
+% \makecell[l]{NAVSIM~\footnotesize\cite{dauner2024navsim}}
+% & Driving & Sim
+% & \xmark & \cmark & \xmark
+% & \cmark & \cmark & \xmark & \xmark \\
+
+% \makecell[l]{Bench2Drive~\footnotesize\cite{jia2024benchdrive}}
+% & Driving & Sim
+% & \cmark & \cmark & \cmark
+% & \cmark & \cmark & \cmark & \xmark \\
+
+% \makecell[l]{WOD-E2E~\footnotesize\cite{waymo2025e2e}}
+% & Driving & Real
+% & \cmark & \cmark & \xmark
+% & \cmark & \cmark & \cmark & \cmark \\
+
+% \makecell[l]{Fail2Drive~\footnotesize\cite{gerstenecker2026fail2drivebenchmarkingclosedloopdriving}}
+% & Driving & Sim
+% & \xmark & \cmark & \cmark
+% & \cmark & \cmark & \cmark & \cmark \\
+
+% \makecell[l]{DynaNav~\footnotesize\cite{ticvla2026}}
+% & Navigation & Sim
+% & \cmark & \cmark & \cmark
+% & \cmark & \cmark & \xmark & \xmark \\
+
+% \makecell[l]{SidewalkBench~\footnotesize\cite{liu2026sidewalkbench}}
+% & Navigation & Sim
+% & \xmark & \cmark & \cmark
+% & \cmark & \cmark & \cmark & \xmark \\
+
+% \makecell[l]{SafetyChores~\footnotesize\cite{zhang2025safevla}}
+% & Mobile Manip. & Sim
+% & \xmark & \cmark & \cmark
+% & \xmark & \cmark & \cmark & \xmark \\
+
+% \makecell[l]{VLA-Arena~\footnotesize\cite{zhang2025vlaarena}}
+% & Manipulation & Sim
+% & \xmark & \cmark & \cmark
+% & \xmark & \cmark & \xmark & \xmark \\
+
+% \makecell[l]{ANNIE-Bench~\footnotesize\cite{annie2025}}
+% & Manipulation & Sim
+% & \xmark & \cmark & \cmark
+% & \cmark & \cmark & \xmark & \xmark \\
+
+% \makecell[l]{HazardArena~\footnotesize\cite{chen2026hazardarenaevaluatingsemanticsafety}}
+% & Manipulation & Sim
+% & \xmark & \cmark & \cmark
+% & \cmark & \cmark & \xmark & \xmark \\
+
+% \makecell[l]{OopsieVerse~\footnotesize\cite{balaji2026oopsieverse}}
+% & Manipulation & Sim
+% & \xmark & \cmark & \cmark
+% & \xmark & \cmark & \xmark & \xmark \\
+
+% \makecell[l]{LIBERO-Safety~\footnotesize\cite{cui2026liberosafety}}
+% & Manipulation & Sim
+% & \cmark & \cmark & \cmark
+% & \cmark & \cmark & \xmark & \xmark \\
+
+% \bottomrule
+% \end{tabular}
+% }
+% \caption{
+% \textbf{Validation-time robot action safety benchmarks.}
+% Benchmarks are organized by embodiment and evaluation type. Action labels distinguish text-based reasoning or decision outputs from control-based action outputs. Safety dimensions are categorized as Human, Environment (Env), and Social. ``Closed-loop'' indicates whether agent actions influence subsequent observations during evaluation. ``Long-tailed'' indicates whether the benchmark explicitly evaluates rare or edge-case scenarios.
+% }
+% \label{tab:validation-time-safety}
+% \end{table*}
+
+\begin{table*}[t!]
+\centering
+\begingroup
+\fontsize{8.43}{10.1}\selectfont
+\setlength{\tabcolsep}{3.0pt}
+\renewcommand{\arraystretch}{1.08}
+\begin{tabular*}{\textwidth}{p{3.35cm}|c c | c c | c | c c c | c | l}
+\toprule
+\multirow{2}{*}{\textbf{Benchmark}}
+& \multirow{2}{*}{\textbf{Embodiment}}
+& \multirow{2}{*}{\textbf{Setting}}
+& \multicolumn{2}{c|}{\textbf{Action Output}}
+& \textbf{Closed-}
+& \multicolumn{3}{c|}{\textbf{Safety Dimensions}}
+& \textbf{Long-} 
+& \multirow{2}{*}{\textbf{$\mathcal S_{\mathrm{inc}}$ Incident Set Coverage}} \\
+&
+&
+&
+\textbf{Text}
+& \textbf{Ctrl}
+& \textbf{loop}
+& \textbf{Human}
+& \textbf{Env}
+& \textbf{Social}
+& \textbf{tailed} 
+& \\
+\midrule
+\multicolumn{11}{l}{\textit{Reasoning-focused evaluation}}\\
+\midrule
+\makecell[l]{WaymoQA~\cite{yu2025waymoqa}}
+& Driving & Real
+& \cmark & \xmark & \xmark
+& \cmark & \cmark & \cmark & \cmark
+& \makecell[l]{Occluded road users; detours;\\oncoming traffic; signal risks} \\
+
+\makecell[l]{WOMD-Reasoning~\cite{li2025womdreasoning}}
+& Driving & Real
+& \cmark & \cmark & \xmark
+& \cmark & \cmark & \cmark & \cmark
+& \makecell[l]{Interactions; overtaking;\\yielding; right-of-way} \\
+
+\makecell[l]{ASIMOV-1~\cite{sermanet2025asimov1}}
+& Agentic & Real
+& \cmark & \xmark & \xmark
+& \cmark & \cmark & \cmark & \xmark
+& \makecell[l]{Allergens; burns; sharp objects\\placement; norm violations} \\
+
+\makecell[l]{ASIMOV-2.0~\cite{jindal2025}}
+& Agentic & Real
+& \cmark & \xmark & \xmark
+& \cmark & \cmark & \cmark & \xmark
+& \makecell[l]{Burns; children; lifting injury\\Electrical/biohazards; alerts} \\
+
+\makecell[l]{ASIMOV-Agentic~\cite{gemini2026asimovagentic}}
+& Agentic & Real
+& \cmark & \xmark & \xmark
+& \cmark & \cmark & \cmark & \cmark
+& \makecell[l]{Human proximity; constraints;\\unsafe/ambiguous requests} \\
+
+\makecell[l]{SciFi-Benchmark~\cite{sermanet2025scifi}}
+& Agentic & Real
+& \cmark & \xmark & \xmark
+& \xmark & \xmark & \cmark & \xmark
+& \makecell[l]{Fictional robot/AI dilemmas;\\ethical/social-norm violations} \\
+
+\makecell[l]{IS-Bench~\cite{isbench2025}}
+& Agentic & Sim
+& \cmark & \xmark & \cmark
+& \xmark & \cmark & \xmark & \xmark
+& \makecell[l]{Appliance and chemical risks;\\contamination; fire hazards} \\
+
+\makecell[l]{AGENTSAFE~\cite{ying2025agentsafebenchmarkingsafetyembodied}}
+& Agentic & Sim
+& \cmark & \xmark & \cmark
+& \xmark & \cmark & \xmark & \xmark
+& \makecell[l]{Hazardous/jailbreak requests;\\liquids near electronics; spills} \\
+
+\makecell[l]{SafePlan-Bench~\cite{SafePlan-Bench2025}}
+& Agentic & Sim
+& \cmark & \xmark & \cmark
+& \cmark & \cmark & \xmark & \xmark
+& \makecell[l]{Falls; burns; appliance misuse;\\chemical/electrical hazards} \\
+
+
+\midrule
+\multicolumn{11}{l}{\textit{Control or joint reasoning-control evaluation}}\\
+\midrule
+\makecell[l]{NAVSIM~\cite{dauner2024navsim}}
+& Driving & Sim
+& \xmark & \cmark & \xmark
+& \cmark & \cmark & \xmark & \xmark
+& \makecell[l]{Road-user/obstacle collisions;\\unsafe spacing; road departure} \\
+
+\makecell[l]{Bench2Drive~\cite{jia2024benchdrive}}
+& Driving & Sim
+& \cmark & \cmark & \cmark
+& \cmark & \cmark & \cmark & \xmark
+& \makecell[l]{Pedestrian/vehicle interactions;\\red lights; emergency yielding} \\
+
+\makecell[l]{WOD-E2E~\cite{waymo2025e2e}}
+& Driving & Real
+& \cmark & \cmark & \xmark
+& \cmark & \cmark & \cmark & \cmark
+& \makecell[l]{Pedestrian/cyclist interactions;\\unsafe paths; traffic obstacles} \\
+
+\makecell[l]{Fail2Drive~\cite{gerstenecker2026fail2drivebenchmarkingclosedloopdriving}}
+& Driving & Sim
+& \xmark & \cmark & \cmark
+& \cmark & \cmark & \cmark & \cmark
+& \makecell[l]{Pedestrian/obstacle collisions;\\stop/yield failures} \\
+
+\makecell[l]{DynaNav~\cite{ticvla2026}}
+& Navigation & Sim
+& \cmark & \cmark & \cmark
+& \cmark & \cmark & \xmark & \xmark
+& \makecell[l]{Moving human collisions; \\obstacle collisions} \\
+
+% Spreadsheet row 365; 2606.16953v1.
+\makecell[l]{SidewalkBench~\cite{liu2026sidewalkbench}}
+& Navigation & Sim
+& \xmark & \cmark & \cmark
+& \cmark & \cmark & \cmark & \xmark
+& \makecell[l]{Pedestrian/obstacle collisions;\\boundary/yield/gesture failures} \\
+
+\makecell[l]{SafetyChores~\cite{zhang2025safevla}}
+& Mobile Manip. & Sim
+& \xmark & \cmark & \cmark
+& \xmark & \cmark & \cmark & \xmark
+& \makecell[l]{Fragile objects; falls; collisions;\\precarious placement} \\
+
+\makecell[l]{VLA-Arena~\cite{zhang2025vlaarena}}
+& Manipulation & Sim
+& \xmark & \cmark & \cmark
+& \xmark & \cmark & \xmark & \xmark
+& \makecell[l]{Obstacles; sharp objects; spills;\\appliance and fire hazards} \\
+
+\makecell[l]{ANNIE-Bench~\cite{annie2025}}
+& Manipulation & Sim
+& \xmark & \cmark & \cmark
+& \cmark & \cmark & \xmark & \xmark
+& \makecell[l]{Human proximity; sharp objects;\\boundary/workspace collisions} \\
+
+\makecell[l]{HazardArena~\cite{chen2026hazardarenaevaluatingsemanticsafety}}
+& Manipulation & Sim
+& \xmark & \cmark & \cmark
+& \cmark & \cmark & \xmark & \xmark
+& \makecell[l]{Burns; electrical/toxic hazards; \\children; sharp objects} \\
+
+
+\makecell[l]{OopsieVerse~\cite{balaji2026oopsieverse}}
+& Manipulation & Sim
+& \xmark & \cmark & \cmark
+& \xmark & \cmark & \xmark & \xmark
+& \makecell[l]{Mechanical and thermal damage;\\fluid damage} \\
+
+
+\makecell[l]{LIBERO-Safety~\cite{cui2026liberosafety}}
+& Manipulation & Sim
+& \cmark & \cmark & \cmark
+& \cmark & \cmark & \xmark & \xmark
+& \makecell[l]{Human-hand/tabletop collisions;\\fragile object toppling} \\
+
+
+\bottomrule
+\end{tabular*}
+\endgroup
+\caption{
+Benchmarks are organized by embodiment and evaluation type. Action labels distinguish text-based reasoning or decision outputs from control-based action outputs. Safety dimensions are categorized as Human, Environment (Env), and Social. ``Closed-loop'' indicates whether agent actions influence subsequent observations during evaluation. ``Long-tailed'' indicates whether the benchmark explicitly evaluates rare or edge-case scenarios.
+}
+\label{tab:validation-time-safety}
+\end{table*}

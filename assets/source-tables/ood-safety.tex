@@ -1,0 +1,64 @@
+\begin{table}[t]
+\centering
+\setlength{\tabcolsep}{4pt}
+\renewcommand{\arraystretch}{1.15}
+
+\begin{tabular}{p{2.1cm} | c | p{1.4cm} | l l}
+\toprule
+
+\textbf{Method} &
+\textbf{Year} &
+\textbf{Embod.} &
+\textbf{Trigger} &
+\textbf{Response} \\
+
+\midrule
+
+Semantic Anomaly~\cite{ElhafsiSinhaEtAl2023} &
+2023 &
+Agentic &
+Anomaly &
+Flag \\
+
+KnowNo~\cite{knowno2023} &
+2023 &
+Agentic &
+Uncertainty &
+Escalate \\
+
+AESOP~\cite{SinhaElhafsiEtAl2024} &
+2024 &
+Navigation &
+Anomaly &
+Replan \\
+
+FORTRESS~\cite{ganai2025realtime} &
+2025 &
+Navigation &
+Novelty &
+Replan \\
+
+UNISafe~\cite{seo2025uncertaintyaware} &
+2025 &
+Manipulation &
+Uncertainty &
+Replan \\
+
+UPS~\cite{yuan2026when} &
+2026 &
+Agentic &
+Uncertainty &
+Escalate \\
+
+Gemini Robotics 2~\cite{gemini2026asimovagentic} &
+2026 &
+Agentic &
+Uncertainty &
+Replan/Escalate \\
+
+\bottomrule
+\end{tabular}
+
+\caption{Methods categorized by runtime trigger and response. \textit{Novelty} denotes unfamiliar observations, \textit{Anomaly} denotes semantically unusual observations, and \textit{Uncertainty} denotes low-confidence decisions. Responses are \textit{Flag} for detection only, \textit{Replan} to revise the current action, and \textit{Escalate} to request human input.}
+\label{tab:ood_safety_roles}
+\end{table}

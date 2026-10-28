@@ -1,0 +1,142 @@
+\begin{table*}[t!]
+\centering
+\setlength{\tabcolsep}{3.5pt}
+\renewcommand{\arraystretch}{1.14}
+
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{p{2.45cm} | p{1.55cm} | p{1.65cm} | p{2.95cm} | cc | ccc | p{3.45cm}}
+\toprule
+
+\multirow{2}{*}{\textbf{Method}} &
+\multirow{2}{*}{\textbf{Embodiment}} &
+\multirow{2}{*}{\textbf{Alignment}} &
+\multirow{2}{*}{\makecell{\textbf{$F_{\text{safe}}$} \textbf{Safety Signal}}} &
+\multicolumn{2}{c|}{\textbf{Constraints}} &
+\multicolumn{3}{c|}{\textbf{Dimensions}} &
+% [Previous version] \multirow{2}{*}{\textbf{$S_{inc}$ Incident Set  Coverage}} \\
+\multirow{2}{*}{\textbf{$\mathcal S_{\mathrm{inc}}$ Incident Set  Coverage}} \\
+
+\cmidrule{5-6} \cmidrule{7-9}
+
+& & &
+& \textbf{Rsn} & \textbf{Ctrl}
+& \textbf{Hum} & \textbf{Env} & \textbf{Soc} & \\
+
+\midrule
+\multicolumn{10}{l}{\textbf{Direct Control Alignment}} \\
+\midrule
+
+ViNT~\cite{shah2023vint} & Navigation & Imitation-driven & Demonstrations for collision aversion
+& \xmark & \xmark & \xmark & \cmark & \xmark
+& Obstacle collision; off-route navigation \\
+
+NoMaD~\cite{sridhar204nomad} & Navigation & Imitation-driven & Demonstrations for collision aversion
+& \xmark & \xmark & \xmark & \cmark & \xmark
+& Obstacle collision; failed goal-reaching \\
+
+NavDP~\cite{NavDP2025} & Navigation & Imitation-driven & Demonstrations for trajectory safety
+& \xmark & \xmark & \xmark & \cmark & \xmark
+& Obstacle collision; unsafe trajectory rollout \\
+
+Multi-Hug RL~\cite{multihug-rl2023} & Navigation & Control-constrained & Penalty for collision and intervention aversion
+& \xmark & \cmark & \cmark & \cmark & \cmark
+& Human collision; obstacle collision; intervention triggers \\
+
+S2E~\cite{seeing2exp} & Navigation & Control-constrained & Penalty for pedestrian-aware collision aversion
+& \xmark & \cmark & \cmark & \cmark & \cmark
+& Pedestrian collision; obstacle collision; social intrusion \\
+
+SafeVLA~\cite{zhang2025safevla} & Mob. Manip. & Control-constrained & Penalty for unsafe-action aversion
+& \xmark & \cmark & \xmark & \cmark & \cmark
+& Obstacle collision; unsafe manipulation / behaviors \\
+
+\midrule
+\multicolumn{10}{l}{\textbf{Reasoning-Augmented Control Alignment}} \\
+\midrule
+
+TOKEN~\cite{tian2024tokenize} & Driving & Reasoning-mediated & Object cues for hazard grounding
+& \cmark & \xmark & \cmark & \cmark & \xmark
+& Missed traffic object / scenario / collision risk \\
+
+AutoVLA~\cite{zhou2025autovla} & Driving & Reasoning-mediated & Reasoning traces for rule compliance
+& \cmark & \xmark & \cmark & \cmark & \xmark
+& Missed traffic-rule grounding; unsafe maneuver; collision risk \\
+
+Poutine~\cite{poutine2025} & Driving & Reasoning-mediated & Safety reasoning for hazard anticipation
+& \cmark & \xmark & \cmark & \cmark & \xmark
+& Missed traffic hazard / collision-aware reasoning \\
+
+Pinocchio~\cite{foutter2026faithfulness} & Driving & Reasoning-mediated & Consistency critic from reasoning to action 
+& \cmark & \cmark & \cmark & \cmark & \cmark
+& Human / environment collision; socially unsafe driving \\
+
+StyleVLA~\cite{gao2026stylevla} & Driving & Reasoning-mediated & Style reasoning for risk-calibrated driving
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Risky driving style; rule violation; socially unsafe maneuver \\
+
+RationalVLA~\cite{rationalvla2025} & Manip. & Reasoning-mediated & Feasibility reasoning for action rejection
+& \cmark & \xmark & \cmark & \cmark & \xmark
+& Infeasible action; human harm; object damage \\
+
+Gemini Robotics~\cite{gemini2025} & Manip. & Reasoning-mediated & Semantic reasoning for unsafe-action rejection
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Human harm; object damage; socially inappropriate action \\
+
+Think2Drive~\cite{think2drive2024} & Driving & World model & Reasoning traces \& score for future-risk avoidance
+& \xmark & \cmark & \cmark & \cmark & \xmark
+& Predicted collision; unsafe future state; traffic-rule violation \\
+
+IRL-VLA~\cite{jiang2025irlvlatrainingvisionlanguageactionpolicy} & Driving & World model & Reward for trajectory-risk aversion
+& \xmark & \cmark & \cmark & \cmark & \xmark
+& Missed collision awareness; unsafe trajectory preference \\
+
+ELF-VLA~\cite{Luoetal2026} & Driving & World model & Failure data and correction for recovery behavior
+& \cmark & \cmark & \cmark & \cmark & \xmark
+& Driving failure; unrecovered hazard; unsafe correction \\
+
+TakeVLA~\cite{gao2026learning} & Driving & World model & Takeover data \& boundary for human intervention
+& \cmark & \cmark & \cmark & \cmark & \xmark
+& Delayed takeover; unsafe boundary; collision risk \\
+
+Curious-VLA~\cite{chen2026devil} & Driving & World model & Constraint for safe exploration
+& \cmark & \cmark & \cmark & \cmark & \xmark
+& Unsafe exploration; collision awareness; traffic violation \\
+
+CF-VLA~\cite{peng2025counterfactualVLA} & Driving & World model & Counterfactuals and score for causal-risk avoidance
+& \cmark & \cmark & \cmark & \cmark & \xmark
+& Missed causal action understanding / collision risk \\
+
+Alpamayo-R1~\cite{nvidia2025alpamayo} & Driving & Hybrid & Causal reasoning \& score for control-risk avoidance
+& \cmark & \cmark & \cmark & \cmark & \cmark
+& Human / environment collision; socially unsafe driving \\
+
+LCDrive~\cite{Tanetal2025} & Driving & Hybrid & Latent reasoning \& score for control-risk avoidance
+& \cmark & \cmark & \cmark & \cmark & \cmark
+& Human / environment collision; socially unsafe driving \\
+
+\midrule
+\multicolumn{10}{l}{\textbf{Agentic Action Alignment}} \\
+\midrule
+
+HarmBench~\cite{mazeika2024harmbench} & Generalist & Reasoning-mediated & Unsafe-instruction labels for refusal behavior
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Harmful instruction compliance; object misuse \\
+
+Robot Constitutions \cite{sermanet2025asimov1} & Generalist & Reasoning-mediated & Prompted reasoning for rule compliance
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Rule violation; harmful action; socially inappropriate behavior \\
+
+Safety Thinking~\cite{jindal2025} & Generalist & Reasoning-mediated & Physical reasoning for feasibility preservation
+& \cmark & \xmark & \cmark & \cmark & \xmark
+& Physical infeasibility; human harm; environment damage \\
+
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+
+\caption{Design-time learning-based alignment methods grouped by paradigm. 
+Safety is decomposed by \textbf{constraint sources} (Structured Reasoning (Rsn), Control (Ctrl)) and 
+\textbf{safety dimensions} (Human (Hum), Environment (Env), Social (Soc)). The $F_{\text{safe}}$ column follows the format \textit{source object for safety role}, describing whether the safety concept is learned from demonstrations, labels, takeovers, failures, or reasoning traces; imposed through explicit penalties, rewards, scores, filters, or constraints; or formed by hybrid reasoning-control supervision.
+The final column summarizes the primary incident set covered by each method.}
+\label{tab:design_time_alignment}
+\end{table*}

@@ -1,0 +1,178 @@
+\begin{table*}[t!]
+\centering
+\label{tab:deployment_time_guardrails}
+\setlength{\tabcolsep}{3.2pt}
+\renewcommand{\arraystretch}{1.14}
+
+\begin{adjustbox}{width=\textwidth}
+\begin{tabular}{p{2.25cm} | p{1.7cm} | p{1.75cm} | p{3.0cm} | cc | ccc | p{3.45cm}}
+\toprule
+
+\multirow{2}{*}{\textbf{Method}} &
+\multirow{2}{*}{\textbf{Granularity}} &
+\multirow{2}{*}{\textbf{Paradigm}} &
+\multirow{2}{*}{\textbf{$\mathcal C_{\mathrm{safe}}$ Runtime Critic}} &
+\multicolumn{2}{c|}{\textbf{Constraints}} &
+\multicolumn{3}{c|}{\textbf{Dimensions}} &
+% [Previous version] \multirow{2}{*}{\textbf{$S_{inc}$ Incident Set Coverage}} \\
+\multirow{2}{*}{\textbf{$\mathcal S_{\mathrm{inc}}$ Incident Set Coverage}} \\
+
+\cmidrule(lr){5-6} \cmidrule(lr){7-9}
+
+& & &
+& \textbf{Rsn} & \textbf{Ctrl}
+& \textbf{Hum} & \textbf{Env} & \textbf{Soc} & \\
+
+\midrule
+\multicolumn{10}{l}{\textbf{Control-Level Safeguards}: \textit{(a) Control-theoretic filtering}} \\
+\midrule
+
+PACS~\cite{pacs2025} & Step-wise & Reachability
+& Reachability safety set over robot-object states
+& \xmark & \cmark & \cmark & \cmark & \xmark
+& Human/object collision \\
+
+SALT~\cite{jeong2025robotssuggestsafealternatives} & Step-wise & Reachability
+& Reach-avoid value network over robot-goal states
+& \xmark & \cmark & \xmark & \cmark & \xmark
+& Wall collision; failed pickup \\
+
+LatentSafe~\cite{kensuke2025rss} & Step-wise & Reachability
+& Learned safety value over latent states
+& \xmark & \cmark & \xmark & \cmark & \cmark
+& Candy spilling; block toppling \\
+
+UNISafe~\cite{seo2025uncertaintyaware} & Step-wise & Reachability
+& Learned safety value, OOD over latent states
+& \xmark & \cmark & \xmark & \cmark & \cmark
+& Jenga collapse; block toppling \\
+
+AnySafe~\cite{anysafe2025} & Step-wise & Reachability
+& Learned adaptive safety value over latent states
+& \xmark & \cmark & \xmark & \xmark & \cmark
+& Preference over forbidden region/layout; sweeping task \\
+
+AEGIS~\cite{vlsa2025} & Step-wise & CBF
+& CBF margin over VLM-grounded obstacles
+& \xmark & \cmark & \xmark & \cmark & \xmark
+& Tabletop obstacle collision \\
+
+Safe-Night~\cite{safenightvla2026} & Step-wise & CBF
+& CBF margin over obstacle, thermal temperatures
+& \xmark & \cmark & \xmark & \cmark & \cmark
+& Hot object; buried target; mirror illusion \\
+
+CORE~\cite{ravichandran2026contextual} & Step-wise & CBF
+& CBF over VLM-inferred contextual safe sets
+& \xmark & \cmark & \cmark & \cmark & \cmark
+& Hazard/restricted zone; unsafe terrain; person proximity \\
+
+\midrule
+\multicolumn{10}{l}{\textbf{Control-Level Safeguards:} \textit{(b) Predictive filtering}} \\
+\midrule
+
+SEAL~\cite{wu2025steering} & Trajectory-wise & Value-based prediction
+& VLM alignment score over candidate actions in sim
+& \cmark & \cmark & \xmark & \xmark & \cmark
+& Wrong object; wrong placement; reasoning-action gap \\
+
+NavDP~\cite{NavDP2025} & Trajectory-wise & Value-based prediction
+& Learned critic score over candidate trajectories 
+& \xmark & \cmark & \xmark & \cmark & \xmark
+& Wall/obstacle collision \\
+
+SocialNav~\cite{fang2026socialnav} & Trajectory-wise & Value-based prediction
+& VLM etiquette score over candidate paths
+& \cmark & \cmark & \cmark & \cmark & \cmark
+& Human/obstacle collision; social intrusion; ladder proximity \\
+
+FOREWARN~\cite{foresight2forethought} & Trajectory-wise & Neural world prediction
+& VLM alignment score over imagined futures
+& \cmark & \cmark & \xmark & \cmark & \cmark
+& Chip crushing; object slipping; sanitation; failed pickup \\
+
+ReOI~\cite{chen2025reimagination} & Trajectory-wise & Neural world prediction
+& VLM alignment score over reimagined futures
+& \cmark & \cmark & \xmark & \cmark & \xmark
+& Obstacle collision; rollout hallucination \\
+
+Drive-WM~\cite{drivewm2024} & Trajectory-wise & Neural world prediction
+& Learned visual reward score over driving futures
+& \cmark & \cmark & \cmark & \cmark & \cmark
+& Traffic collision; lane violation; road hazard \\
+
+\midrule
+\multicolumn{10}{l}{\textbf{Task-Level Safeguards}} \\
+\midrule
+
+SafetyChip~\cite{safetychip2024} & Task-wise & Runtime \quad\quad verification
+& LTL admissibility over action traces
+& \cmark & \xmark & \xmark & \xmark & \cmark
+& Forbidden order; unmet obligation; invalid sequence \\
+
+SELP~\cite{wu2025selp} & Task-wise & Runtime \quad\quad verification
+& Automaton admissibility over action traces
+& \cmark & \xmark & \xmark & \xmark & \cmark
+& Drone ordering; block ordering; illegal continuation \\
+
+Safety-Sup.~\cite{llmdrivensafe2024} & Task-wise & Runtime \quad\quad verification
+& LTL admissibility + obstacle margin over executions
+& \cmark & \cmark & \xmark & \cmark & \cmark
+& Task violation; motion collision; virtual obstacle \\
+
+SafePlan~\cite{SafePlan2025} & Task-wise & Runtime \quad\quad verification
+& Invariant satisfaction over task plans
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Child harm; toxic object; unsafe request \\
+
+RoboSafe~\cite{wang2025robosafesafeguardingembodiedagents} & Task-wise & Runtime \quad\quad verification
+& Executable predicate truth over action traces
+& \cmark & \cmark & \xmark & \cmark & \cmark
+& Fire hazard; flood hazard; appliance misuse \\
+
+SAFEL~\cite{dianosingrisks2025} & Task-wise & Runtime \quad\quad verification
+& Transition-risk score over symbolic plans
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Foil microwave; missing unplugging; wrong order \\
+
+IS Bench~\cite{isbench2025} & Task-wise & Runtime \quad\quad verification
+& Triggered safety-goal satisfaction over traces
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Food contamination; stove left on; water-electricity \\
+
+Bluesky~\cite{bluesky2024} & Task-wise & Runtime \quad\quad verification
+& Access-control admissibility over actions
+& \cmark & \xmark & \xmark & \xmark & \cmark
+& Private diary; personal newspaper; movable dishes \\
+
+SAFE-AUDIT~\cite{ying2025agentsafebenchmarkingsafetyembodied} & Task-wise & Semantic \quad verification
+& Semantic audit score over reasoning traces
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Human harm; environment harm; robot-self harm \\
+
+AutoRT~\cite{autort2024} & Task-wise & Semantic \quad verification
+& Constitution compliance over proposed tasks
+& \cmark & \xmark & \cmark & \cmark & \cmark
+& Sharp object; electrical device; infeasible skill \\
+
+Safety-as-Policy~\cite{NiZCBCZZZ25} & Task-wise & Semantic \quad verification
+& Consequence-risk score over TAMP code
+& \cmark & \cmark & \cmark & \cmark & \xmark
+& Power strip; candle / flour; chemicals / blades \\
+
+Gemini Robotics 2~\cite{gemini2026asimovagentic}
+& Task-wise
+& Semantic \quad verification
+& Semantic reasoning over constraints and confidence
+& \cmark & \cmark
+& \cmark & \cmark & \cmark
+& Unsafe task, human proximity, low-confidence action \\
+
+\bottomrule
+\end{tabular}
+\end{adjustbox}
+
+\caption{Deployment-time runtime guardrail methods categorized by safety paradigm and by the runtime safety criterion used to accept, reject, or modify agent behavior.
+Methods are decomposed by whether the guardrail constrains reasoning/planning (\textbf{Rsn}) or control/action execution (\textbf{Ctrl}), and by the safety dimensions evaluated in experiments: human safety (\textbf{Hum}), environmental safety (\textbf{Env}), and social or preference-based safety (\textbf{Soc}).
+The final column summarizes representative safety failures in incident set.}
+\end{table*}

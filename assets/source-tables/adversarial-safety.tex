@@ -1,0 +1,185 @@
+\begin{table}[t!]
+\centering
+\scriptsize
+\setlength{\tabcolsep}{2.0pt}
+\renewcommand{\arraystretch}{1.14}
+
+\resizebox{0.5\textwidth}{!}{
+\begin{tabular}{p{2.2cm} | c | c | c | ccc | c}
+\toprule
+
+\multirow{2}{*}{\textbf{Paper}} &
+\multirow{2}{*}{\textbf{Embod.}} &
+\multirow{2}{*}{\textbf{Phys.}} &
+\multirow{2}{*}{\textbf{Task}} &
+\multicolumn{3}{c|}{\textbf{Safety}} &
+\multirow{2}{*}{\textbf{Defense}} \\
+
+\cmidrule(lr){5-7}
+
+& &
+& \textbf{Fail.} &
+\textbf{Hum} & \textbf{Env} & \textbf{Soc}
+&  \\
+
+\midrule
+\multicolumn{8}{l}{\textbf{Control-Level Adversarial Attacks}} \\
+\midrule
+
+AdvDO~\cite{cao2022advdo}
+& Driving
+& \xmark & \cmark
+& \xmark & \cmark & \xmark
+& \cmark \\
+
+EVA-VLA~\cite{Wang_2025_ICCV}
+& Manipulation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \cmark \\
+
+AdvGrasp~\cite{AdvGrasp2025}
+& Manipulation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \xmark \\
+
+% AA-VLA~\cite{jones2025adversarial}
+% & Manipulation
+% & \xmark & \cmark
+% & \xmark & \cmark & \xmark
+% & \cmark \\
+
+% ADVLA~\cite{ADVLA2025}
+% & Manipulation
+% & \xmark & \cmark
+% & \xmark & \xmark & \xmark
+% & \xmark \\
+
+% WAF~\cite{WAF2025}
+% & Manipulation
+% & \xmark & \cmark
+% & \xmark & \xmark & \xmark
+% & \xmark \\
+
+% MAAD~\cite{MAAD2025}
+% & Manipulation
+% & \xmark & \cmark
+% & \xmark & \xmark & \xmark
+% & \cmark \\
+
+FreezeVLA~\cite{freezevla2025}
+& Manipulation
+& \xmark & \cmark
+& \xmark & \xmark & \xmark
+& \xmark \\
+
+RedVLA~\cite{redvla2026}
+& Manipulation
+& \cmark & \xmark
+& \xmark & \cmark & \xmark
+& \cmark \\
+
+ObeyPatch~\cite{ObeyPatch2025}
+& Manipulation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \xmark \\
+
+\midrule
+\multicolumn{8}{l}{\textbf{Control-Level Backdoor Attacks}} \\
+\midrule
+
+VLNBackdoor~\cite{he2024everyday}
+& Navigation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \xmark \\
+
+GoBA~\cite{GoBA2025}
+& Manipulation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \xmark \\
+
+AttackVLA~\cite{attackvla2025}
+& Manipulation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \cmark \\
+
+BadVLA~\cite{zhou2025badvla}
+& Manipulation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \cmark \\
+
+DropVLA~\cite{DropVLA2025}
+& Manipulation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \xmark \\
+
+\midrule
+\multicolumn{8}{l}{\textbf{Task-Level Jailbreaks}} \\
+\midrule
+
+BadNAVer~\cite{badnaver2025}
+& Navigation
+& \cmark & \xmark
+& \cmark & \cmark & \cmark
+& \xmark \\
+
+BADROBOT~\cite{zhangbadrobot2025}
+& Manipulation
+& \cmark & \xmark
+& \cmark & \cmark & \cmark
+& \cmark \\
+
+ROBOPAIR~\cite{jailbreakllmrobots2025}
+& Generalist
+& \cmark & \cmark
+& \cmark & \cmark & \cmark
+& \xmark \\
+
+DecisionAttack~\cite{shuyuan2024exploring}
+& Generalist
+& \xmark & \cmark
+& \cmark & \cmark & \cmark
+& \xmark \\
+
+PathManip~\cite{PathManip2024}
+& Navigation
+& \xmark & \cmark
+& \xmark & \xmark & \xmark
+& \cmark \\
+
+\midrule
+\multicolumn{8}{l}{\textbf{Task-Level Backdoor Attacks}} \\
+\midrule
+
+BadVLMDriver~\cite{BadVLMDriver2024}
+& Driving
+& \cmark & \cmark
+& \cmark & \xmark & \xmark
+& \cmark \\
+
+BALD~\cite{jiao2025can}
+& Generalist
+& \cmark & \cmark
+& \cmark & \cmark & \xmark
+& \cmark \\
+
+TrojanRobot~\cite{TrojanRobot2024}
+& Manipulation
+& \cmark & \cmark
+& \xmark & \cmark & \xmark
+& \cmark \\
+
+\bottomrule
+\end{tabular}
+}
+
+\caption{Adversarial and backdoor attacks grouped by level and mechanism. Phys. denotes physical-world evaluation; Task Fail. denotes task failure; Hum, Env, and Soc denote human, environmental, and social safety violations, respectively. Defense indicates a proposed or evaluated defense. \cmark/\xmark indicate reported/not reported.}
+\label{tab:embodied_attack_taxonomy}
+\end{table}
