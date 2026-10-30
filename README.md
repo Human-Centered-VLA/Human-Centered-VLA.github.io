@@ -12,6 +12,7 @@ The site is prepared for publication through GitHub Pages.
 ## Included on the page
 
 - Survey title, all 19 authors, and affiliations.
+- Prominent “Read preprint” button and navigation link to https://www.preprints.org/manuscript/202610.2762.
 - Use-case perspectives and lifecycle framework.
 - All five original manuscript figures, with zoom and PDF links.
 - The five comparison tables included by `overleaf/main_arxiv.tex`:
